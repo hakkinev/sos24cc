@@ -41,7 +41,7 @@ public class statistics {
             avvikelse += Math.pow(values.get(i) - mean, 2);
         }
 
-        // Beräkna kvadratroten ur den genomsnittliga avvikelsen för att få standardavvikelsen
+        // Räkna kvadratroten ur den genomsnittliga avvikelsen för att få standardavvikelsen!
         return Math.sqrt(avvikelse / values.size());
     }
 
