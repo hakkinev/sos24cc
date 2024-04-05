@@ -15,7 +15,7 @@ public class MainActivity extends AppCompatActivity {
     TextView outputText;
     EditText inputText;
 
-    double[] values = {4, 4, 12, 0.5, 2, 6, 2, 9, 3};
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,30 +25,30 @@ public class MainActivity extends AppCompatActivity {
         outputText = findViewById(R.id.outText);
         inputText = findViewById(R.id.inputText);
 
-        outputText.setText("Min app funkar!");
+        double version = 3.14159;
+        int year = 2024;
+        String author = "Hakkinev";
+
+
+
+        outputText.setText(String.format(
+                "Appens version %.1f år %d by %s",
+                version,
+                year,
+                author));
 
     }
 
     public void buttonHandler(View view) {
         String text = inputText.getText().toString();
         outputText.setText(text);
-        calculate();
 
     }
 
-    private void calculate() {
-        //medelvärde
-        double mean = calcMean(values);
-        // printa resultat
-        outputText.setText("Medelvärdet är: " + mean);
+    public void calculate(View view) {
+        double[] values = {4, 4, 12, 0.5, 2, 6, 2, 9, 3};
+        outputText.setText(String.format(
+                "Medelvärdet: %.2f" , statistics.calcMean(values)));
     }
 
-
-    private double calcMean(double[] data) {
-        double sum = 0;
-        for (double value : data) {
-            sum += value;
-        }
-        return sum / data.length;
-    }
 }
