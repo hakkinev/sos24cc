@@ -17,11 +17,11 @@
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.071"
-        app:layout_constraintStart_toStartOf="@+id/inputText"
-        app:layout_constraintTop_toBottomOf="@+id/inputText" />
+        app:layout_constraintStart_toStartOf="@+id/inText"
+        app:layout_constraintTop_toBottomOf="@+id/inText" />
 
     <EditText
-        android:id="@+id/inputText"
+        android:id="@+id/inText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
@@ -39,9 +39,9 @@
         android:layout_marginStart="24dp"
         android:onClick="buttonHandler"
         android:text="OK"
-        app:layout_constraintBottom_toBottomOf="@+id/inputText"
-        app:layout_constraintStart_toEndOf="@+id/inputText"
-        app:layout_constraintTop_toTopOf="@+id/inputText"
+        app:layout_constraintBottom_toBottomOf="@+id/inText"
+        app:layout_constraintStart_toEndOf="@+id/inText"
+        app:layout_constraintTop_toTopOf="@+id/inText"
         app:layout_constraintVertical_bias="0.0" />
 
     <Button
@@ -51,7 +51,7 @@
         android:layout_marginTop="28dp"
         android:onClick="calculate"
         android:text="Calculate"
-        app:layout_constraintStart_toStartOf="@+id/inputText"
-        app:layout_constraintTop_toBottomOf="@+id/inputText" />
+        app:layout_constraintStart_toStartOf="@+id/inText"
+        app:layout_constraintTop_toBottomOf="@+id/inText" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
