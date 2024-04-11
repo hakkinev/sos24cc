@@ -19,7 +19,7 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
-    TextView outputText;
+    TextView outputText, greetingText;
     EditText inputText, inputValue;
     RecyclerView recyclerView;
     SharedPreferences prefs;
@@ -43,7 +43,18 @@ public class MainActivity extends AppCompatActivity {
 
         // Läsvärde från SharedPreferences (uppdateras i buttonHandler)
         String lastText = prefs.getString("lastText", "---");
-        outputText.setText("Appen har startats n gånger Last text: " + lastText);
+        int startCount = prefs.getInt("startCount", 1);
+
+        //Skriv värder i prefs (öka startCount)
+        SharedPreferences.Editor prefsEditor;
+        prefsEditor = prefs.edit();
+        prefsEditor.putInt("startCount", startCount+1);
+        prefsEditor.apply();
+
+        outputText.setText(String.format(
+                "Appen har startats %d gånger\nLast text: %s",
+                startCount,
+                lastText));
 
 
         // double version = 3.14159;
